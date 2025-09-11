@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vishwadhini Jothidam — Personalized Rashipalan</title>
+  <meta name="description" content="Personalized Rashipalan reports by BaskaraYogesh — Monthly, Bi-monthly, Weekly and VIP plans. Secure payments via Razorpay." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa8b2; --accent:#d4af37; --glass: rgba(255,255,255,0.04);
+      --card-radius:14px; --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: radial-gradient(ellipse at 20% 10%, rgba(212,175,55,0.06), transparent 10%), linear-gradient(180deg,#071021 0%, #081423 60%); color:#e6eef6; -webkit-font-smoothing:antialiased; line-height:1.6}
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px;}
+
+    /* Header */
+    header{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:30px;}
+    .logo-container{display:flex;align-items:center;gap:18px;flex-direction:column;}
+    .logo{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,#10243a,#092433);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(4,7,12,0.6)}
+    .logo img{width:60px;height:60px;border-radius:10px;}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:14px}
+    
+    .price-tag-container{margin-top:10px;}
+    .price-tag{background:linear-gradient(90deg,#111827,#0b1721);padding:10px 14px;border-radius:999px;color:var(--accent);font-weight:700;border:1px solid rgba(212,175,55,0.08);display:inline-block;margin:5px;}
+
+    /* Hero Section */
+    .hero{display:flex;flex-direction:column;gap:28px;margin-top:22px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:var(--card-radius);box-shadow:0 6px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.02)}
+    .hero-card-header{margin-bottom:16px;}
+    .hero-cta{display:flex;flex-direction:column;gap:12px}
+
+    .features{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
+    
+    /* How it works aside */
+    .how-it-works{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02);margin-top:20px;}
+    
+    /* Pricing */
+    .pricing{margin-top:28px}
+    .cards{display:grid;grid-template-columns:1fr;gap:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);position:relative;}
+    .card .title{font-weight:700;font-size:16px;margin-bottom:6px}
+    .price{font-size:20px;font-weight:800;color:var(--accent);margin:10px 0}
+    .card ul{margin:0;padding:0 0 0 18px;color:var(--muted);line-height:1.6}
+    .most-pop{border:1px solid rgba(212,175,55,0.12);box-shadow:0 8px 28px rgba(212,175,55,0.06)}
+    .badge{position:absolute;right:12px;top:-12px;background:var(--accent);color:#061017;padding:6px 8px;border-radius:999px;font-weight:800;font-size:12px}
+
+    /* How it works steps */
+    .how{margin-top:28px;display:flex;flex-direction:column;gap:18px}
+    .how .step{background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .how h3{margin:0 0 8px 0}
+    
+    /* YouTube video container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      margin-top: 12px;
+      border-radius: 8px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Footer */
+    footer{margin-top:30px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));display:flex;flex-direction:column;gap:20px;text-align:center;}
+    .contact{color:var(--muted)}
+    
+    /* Buttons */
+    .buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px;justify-content: center;}
+    .btn{background:var(--accent);color:#061017;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-block;text-align:center;flex:1;min-width:120px;}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px 12px}
+
+    /* Legal links */
+    .legal-links {display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; font-size: 13px;}
+    .legal-links a {color: var(--muted); text-decoration: none;}
+    .legal-links a:hover {color: var(--accent); text-decoration: underline;}
+
+    /* Desktop Styles */
+    @media (min-width:768px){
+      header{flex-direction:row;justify-content:space-between;text-align:left;}
+      .logo-container{flex-direction:row;text-align:left;align-items:center;}
+      .price-tag-container{margin-top:0;}
+      
+      .hero{flex-direction:row;}
+      
+      .features{grid-template-columns:repeat(3,1fr);}
+      
+      .cards{grid-template-columns:repeat(2,1fr);}
+      
+      .how{flex-direction:row;}
+      
+      footer{flex-direction:row;justify-content:space-between;text-align:left;}
+    }
+    
+    @media (min-width:980px){
+      .cards{grid-template-columns:repeat(4,1fr);}
+    }
+    
+    @media (max-width:767px){
+      .buttons{flex-direction:column;}
+      .btn{width:100%;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <div class="logo">
+          <img src="goddesslogo.jpeg" alt="Vishwadhini Jothidam Logo">
+        </div>
+        <div>
+          <h1>Vishwaadhini Jothidam</h1>
+          <h2 style="margin:0;font-size:18px;">Astrologer BaskaraYogesh.SB (M.A Astrology)</h2>
+          <p class="lead">Personalized Raasipalan reports tailored from your exact birth details.</p>
+        </div>
+      </div>
+      <div class="price-tag-container">
+        <div class="price-tag">Launch Offer — Personalized Yearly Plan from ₹500</div>
+        <div class="price-tag">Available in All Indian Languages</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <h2 style="margin:0 0 6px 0">Monthly Personalized Rashipalan</h2>
+          <p class="small">Using Birth Date, Birth Time & Birth Place to craft monthly insights for career, health, relationships, and finance.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature">✅ Personalized charts from accurate Birth Date/Birth Time/Birth Place</div>
+          <div class="feature">✅ Report will be Delivered monthly through Registered Email</div>
+          <div class="feature">✅ Secure UPI / Cards / Netbanking via Razorpay</div>
+        </div>
+        
+
+
+      <aside class="how-it-works">
+        <h3 style="margin:0 0 10px 0">How it works</h3>
+        <ol class="small" style="margin:0 0 0 18px;padding:0">
+          <li>Choose the Plan Based on Your Needs and complete the payment</li>
+          <li>Once payment is done you will be redirected to Form where you need to Fill your birth details (Birth Date/Birth Time/Birth Place)</li>
+          <li>And Done, From Now on you will Receive personalized rashipalan via Your Registered Email based on Plan you Selected</li>
+        </ol>
+        <p class="small" style="margin-top:12px">Pro tip: Choose the 15-day plan for more frequent guidance.</p>
+      </aside>
+    </section>
+
+    <section class="pricing">
+      <h2 style="margin:0 0 12px 0">Plans</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="title">Basic</div>
+          <div class="price">₹500 / Year</div>
+          <ul>
+            <li>12 Personalized Reports (Monthly)</li>
+            <li>Delivery Via Registered Email</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn" href="#" onclick="location.href=paymentLinkBasic;return false">Subscribe</a></div>
+        </div>
+
+        <div class="card most-pop">
+          <div class="badge">Most Popular</div>
+          <div class="title">Premium</div>
+          <div class="price">₹1,000 / Year</div>
+          <ul>
+            <li>24 Reports (Every 15 days)</li>
+            <li>Priority Delivery</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn" href="#" onclick="location.href=paymentLinkPremium;return false">Subscribe</a></div>
+        </div>
+
+        <div class="card">
+          <div class="title">Elite</div>
+          <div class="price">₹2,000 / Year</div>
+          <ul>
+            <li>48 Weekly Reports</li>
+            <li>Remedies & Suggestions</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn" href="#" onclick="location.href=paymentLinkElite;return false">Subscribe</a></div>
+        </div>
+
+        <div class="card">
+          <div class="title">VIP Life Planner</div>
+          <div class="price">₹10,000 / Year</div>
+          <ul>
+            <li>Full Year Guidance</li>
+            <li>Monthly Calls & Remedies</li>
+            <li>Priority Access</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn" href="#" onclick="location.href=paymentLinkVIP;return false">Subscribe</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how">
+      <!-- Step 1: Watch YouTube Video -->
+      <div class="step">
+        <h3>Step 1 — Watch Introduction Video</h3>
+        <p class="small">Watch this short video to understand how our personalized Rashipalan service works and how it can benefit you.</p>
+        <div class="video-container">
+          <!-- Replace YOUR_VIDEO_ID with your actual YouTube video ID -->
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                  title="Understanding Vishwadhini Jothidam Rashipalan Service" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      
+      <!-- Step 2: Pay -->
+      <div class="step">
+        <h3>Step 2 — Pay</h3>
+        <p class="small">Click any "Subscribe" button. Replace the payment links below with your Razorpay payment links (one per plan). You can also create a single link and redirect after payment to the Google Form.</p>
+      </div>
+      
+      <!-- Step 3: Share Birth Details -->
+      <div class="step">
+        <h3>Step 3 — Share Birth Details</h3>
+        <p class="small">After payment, customers are redirected to the Google Form where they fill Birth Date, Birth Time, Birth Place, phone, and email. Add your Google Form URL to the redirect or add the form link on this page.</p>
+      </div>
+      
+      <!-- Step 4: Delivery -->
+      <div class="step">
+        <h3>Step 4 — Delivery</h3>
+        <p class="small">As We Have Collected details in Google Sheets, We send monthly reports via Email.</p>
+      </div>
+    </section>
+
+    <!-- Legal Links Section -->
+    <div class="legal-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-conditions.html">Terms & Conditions</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="contact-us.html">Contact Us</a>
+    </div>
+
+    <footer>
+      <div>
+        <strong>Vishwaadhini Jothidam</strong><br>
+        <span class="contact">Astrologer BaskaraYogesh.SB (M.A Astrology) </span>
+        <p class="lead" style="margin-top:10px;">"Astrology is like a weather report; it tells you what conditions you're likely to face in the future. If the weatherman says it's probably going to rain, you bring an umbrella."<br>- Lee Goldberg</p>
+      </div>
+      <div>
+        <div class="contact small">Have questions? <br> <a href="mailto:vishwaadhinijothidam@gmail.com" style="color:var(--muted);text-decoration:underline">vishwaadhinijothidam@gmail.com</a></div>
+        <div style="margin-top:8px" class="small">Phone / WhatsApp: +91-9361764910</div>
+      </div>
+    </footer>
+
+    <!-- Replace the following JS variables with your real links -->
+    <script>
+      // Replace these with your actual Razorpay / Google Form links
+      const paymentLink = 'https://rzp.io/YOUR_DEFAULT_PAYMENT_LINK'; // generic link or landing
+      const formLink = 'https://forms.gle/YOUR_GOOGLE_FORM_LINK';
+
+      const paymentLinkBasic = 'https://rzp.io/YOUR_PLAN_BASIC_LINK';
+      const paymentLinkPremium = 'https://rzp.io/YOUR_PLAN_PREMIUM_LINK';
+      const paymentLinkElite = 'https://rzp.io/YOUR_PLAN_ELITE_LINK';
+      const paymentLinkVIP = 'https://rzp.io/YOUR_PLAN_VIP_LINK';
+
+      // Small helper: if a real link is not set, send user to contact
+      [paymentLink,paymentLinkBasic,paymentLinkPremium,paymentLinkElite,paymentLinkVIP,formLink].forEach((l,i)=>{
+        if(!l || l.includes('YOUR_')){
+          // no-op: buttons will still try to go to the link; you can change behavior here
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Vishwadhini Jothidam</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa8b2;
+      --accent: #d4af37;
+      --card-radius: 14px;
+      --max-width: 800px;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(ellipse at 20% 10%, rgba(212, 175, 55, 0.06), transparent 10%), 
+                  linear-gradient(180deg, #071021 0%, #081423 60%);
+      color: #e6eef6;
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 20px 0;
+      margin-bottom: 30px;
+    }
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #10243a, #092433);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(4, 7, 12, 0.6);
+      margin: 0 auto 15px;
+      overflow: hidden;
+    }
+    
+    .logo-placeholder {
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #061017;
+      font-weight: bold;
+      font-size: 12px;
+      text-align: center;
+    }
+    
+    h1 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    
+    .back-link:hover {
+      color: var(--accent);
+    }
+    
+    .contact-content {
+      background: var(--card);
+      padding: 30px;
+      border-radius: var(--card-radius);
+      margin: 20px 0;
+      line-height: 1.8;
+    }
+    
+    .contact-content h2 {
+      color: var(--accent);
+      margin: 30px 0 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 10px;
+    }
+    
+    .contact-info {
+      margin: 20px 0;
+    }
+    
+    .contact-info p {
+      margin-bottom: 15px;
+      color: var(--muted);
+    }
+    
+    .contact-form {
+      margin-top: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: #e6eef6;
+      font-family: inherit;
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .btn {
+      background: var(--accent);
+      color: #061017;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    footer {
+      margin-top: 30px;
+      padding: 18px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="logo-placeholder">VJ Logo</div>
+      </div>
+      <h1>Contact Us</h1>
+      <p>We're here to help with any questions or concerns</p>
+    </header>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p><strong>Email:</strong> vishwaadhinijothidam@gmail.com</p>
+        <p><strong>Phone/WhatsApp:</strong> +91-9361764910</p>
+        <p><strong>Business Hours:</strong> Monday to Saturday: 9:00 AM to 6:00 PM IST</p>
+        <p><strong>Response Time:</strong> We strive to respond to all inquiries within 24-48 hours.</p>
+      </div>
+      
+      <div class="contact-form">
+        <h2>Send us a Message</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+    
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <footer>
+      <p>© 2023 Vishwaadhini Jothidam. All rights reserved.</p>
+    </footer>
+  </div>
+  
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
